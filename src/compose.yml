@@ -1,0 +1,9 @@
+services:
+  app:
+    image: simulador-do-caos
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:3000
+    restart: always
