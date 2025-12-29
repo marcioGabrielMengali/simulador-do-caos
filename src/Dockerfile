@@ -6,4 +6,5 @@ RUN apt update && apt install stress --yes
 COPY . .
 RUN npm run compile
 EXPOSE 3000
+HEALTHCHECK --interval=10s --timeout=30s --start-period=5s --retries=3 CMD [ "curl", "-f", "http://localhost:3000/health" ]
 CMD ["npm", "start"]
